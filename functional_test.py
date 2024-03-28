@@ -29,11 +29,11 @@ class NewVisitorTest(unittest.TestCase):
 
         # 他注意到到网页里包含"To-Do"这个词
         self.assertIn('To-Do',self.browser.title)
-        header_text = self.browser.find_element(By.TAG_NAME,'hi').text
+        header_text = self.browser.find_element(By.TAG_NAME,'h1').text
         self.assertIn('To-Do',header_text)
 
         # 应用有一个输入待办事项的文本输入框
-        inputbox = self.browser.find_elemrnt(By.ID,'id_new_item')
+        inputbox = self.browser.find_element(By.ID,'id_new_item')
         self.assertEqual(
             inputbox.get_attribute('placeholder'),
             'Enter a to-do item'
